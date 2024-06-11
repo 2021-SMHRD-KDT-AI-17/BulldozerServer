@@ -168,3 +168,19 @@ cython_debug/
 #.idea/
 
 # End of https://www.toptal.com/developers/gitignore/api/flask
+
+#가상환경
+#설치한 것들
+#1.flask
+#2.flask_restx
+#3.selenium
+#4.requests
+#5.torch
+#6.anaconda prompt
+#  conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
+#7.easyocr
+
+venv/
+
+#이미지 폴더
+src/webimgs
