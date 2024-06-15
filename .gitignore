@@ -179,6 +179,9 @@ cython_debug/
 #6.anaconda prompt
 #  conda install pytorch torchvision torchaudio cudatoolkit=10.2 -c pytorch
 #7.easyocr
+#8.google-auth
+#9.google-cloud-vision
+#10. langchain pip install langchain_community
 
 venv/
 

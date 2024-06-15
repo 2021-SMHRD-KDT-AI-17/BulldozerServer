@@ -8,10 +8,8 @@ from src import wordList as wl
 reader = easyocr.Reader(['ko','en'])
 
 
-
-
-dictList=[]
 def imageToText1(path):
+    dictList=[]
     dictList=wl.getWordList()
     # 이미지 로드 및 전처리
     image = cv2.imread(path)
@@ -106,7 +104,7 @@ def imageToText1(path):
     #     print(f"{word}: {score}")
     return processed_text
 
-def imageToText2(path):
+def imageToText(path):
     dictList=wl.getWordList()
     image = cv2.imread(path)
     processed_text = []
@@ -151,7 +149,6 @@ def imageToText2(path):
             def calculate_jamo_similarity(jamo1, jamo2):
                 if jamo1 == jamo2:
                     return 1
-                # 모음이 같고 자음이 다른 경우 0.5를 반환
                 if jamo1[1] == jamo2[1] and jamo1[0] != jamo2[0]:
                     return 0.5
                 return 0
@@ -174,12 +171,7 @@ def imageToText2(path):
             processed_text_with_scores.append((best_match, best_similarity))
     except Exception as e:
         pass
-    # 처리된 텍스트 출력
     print("처리된 텍스트: ")
     print(processed_text)
 
-    # # 각 단어의 유사도 점수 출력
-    # print("\n각 단어의 유사도 점수:")
-    # for word, score in processed_text_with_scores:
-    #     print(f"{word}: {score}")
     return processed_text
